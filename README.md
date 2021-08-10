@@ -1,5 +1,7 @@
 **Project is not ready, avoid opening issues**
+
 # ML-IDS
+
 Applying machine learning principles to the information security field through intelligent intrusion detection systems.
 
 This is a three phases project that can roughly described as
@@ -11,6 +13,7 @@ This is a three phases project that can roughly described as
 ## Project structure
 
 This project has four folders
+
 - data -> Dataset(s) related to the project
 - model -> Three machine learning model that I used to get my result (structure only) + a DataManager class to turn the dataset into learnable features (KDD Cup dataset only)
 - implementation -> Empty for now, will contain the actual C++ implementation that could be deployed on the proposed x86-64 or ARM machines.
@@ -39,60 +42,60 @@ When symbolic variables are binarized, the resulting vector contains 3 (protocol
 
 While all of those values will be used in the first version to allow comparison with current research, some might be added afterward for sake of completeness and relevancy in 2017.
 
-| Variable name               | Discrete or Continuous | Possible values  |
-| --------------------------- |:----------------------:| ----------------:|
-| Duration                    | Continuous             | [0, ∞[           |
-| Protocol Type               | Discrete (Symbolic)    | {icmp, tcp, udp} |
-| Service                     | Discrete (Symbolic)    | {IRC, X11, Z39_50, aol, ..., hostnames, http, ftp}      |
-| Flag                        | Discrete (Symbolic)    | {OTH, REJ, RSTO, RSTOS0, RSTR, S0, S1, S2, S3, SF, SH}  |
-| Source bytes                | Continuous             | [0, ∞[           |
-| Destination bytes           | Continuous             | [0, ∞[           |
-| Land                        | Discrete               | {0, 1} |
-| Wrong fragment              | Continuous             | [0, 3] |
-| Urgent                      | Continuous             | [0, 5] |
-| Hot                         | Continuous             | [0, 77] |
-| Num failed                  | Continuous             | [0, 5] |
-| Logged in                   | Discrete               | {0, 1} |
-| Num compromised             | Continuous             | [0, 1] |
-| Root shell                  | Continuous             | [0, ∞[ |
-| Su attempted                | Discrete               | {0, 1} |
-| Num root                    | Continuous             | [0, 2] |
-| Num file creations          | Continuous             | [0, 40] |
-| Num shells                  | Continuous             | [0, 2] |
-| Num access files            | Continuous             | [0, 9] |
-| Num outbound cmds           | Continuous             | { 0 } |
-| Is host login               | Discrete               | {0, 1} |
-| Is guest login              | Discrete               | {0, 1} |
-| Count                       | Countinuous            | [0, 511] |
-| Srv count                   | Countinuous            | [0, 511] |
-| Serror rate                 | Countinuous            | [0, 1] |
-| Srv serror rate             | Countinuous            | [0, 1] |
-| Rerror rate                 | Countinuous            | [0, 1] |
-| Srv rerror rate             | Countinuous            | [0, 1] |
-| Same srv rate               | Countinuous            | [0, 1] |
-| Diff srv rate               | Countinuous            | [0, 1] |
-| Srv diff host rate          | Countinuous            | [0, 1] |
-| Dst host count              | Countinuous            | [0, 255] |
-| Dst host srv count          | Countinuous            | [0, 255] |
-| Dst host same srv rate      | Countinuous            | [0, 1] |
-| Dst host diff srv rate      | Countinuous            | [0, 1] |
-| Dst host same src port rate | Countinuous            | [0, 1] |
-| Dst host serror rate        | Countinuous            | [0, 1] |
-| Dst host srv serror rate    | Countinuous            | [0, 1] |
-| Dst host rerror rate        | Countinuous            | [0, 1] |
-| Dst host srv rerror rate    | Countinuous            | [0, 1] |
+| Variable name               | Discrete or Continuous |                                        Possible values |
+| --------------------------- | :--------------------: | -----------------------------------------------------: |
+| Duration                    |       Continuous       |                                                [0, ∞[ |
+| Protocol Type               |  Discrete (Symbolic)  |                                       {icmp, tcp, udp} |
+| Service                     |  Discrete (Symbolic)  |     {IRC, X11, Z39_50, aol, ..., hostnames, http, ftp} |
+| Flag                        |  Discrete (Symbolic)  | {OTH, REJ, RSTO, RSTOS0, RSTR, S0, S1, S2, S3, SF, SH} |
+| Source bytes                |       Continuous       |                                                [0, ∞[ |
+| Destination bytes           |       Continuous       |                                                [0, ∞[ |
+| Land                        |        Discrete        |                                                 {0, 1} |
+| Wrong fragment              |       Continuous       |                                                 [0, 3] |
+| Urgent                      |       Continuous       |                                                 [0, 5] |
+| Hot                         |       Continuous       |                                                [0, 77] |
+| Num failed                  |       Continuous       |                                                 [0, 5] |
+| Logged in                   |        Discrete        |                                                 {0, 1} |
+| Num compromised             |       Continuous       |                                                 [0, 1] |
+| Root shell                  |       Continuous       |                                                [0, ∞[ |
+| Su attempted                |        Discrete        |                                                 {0, 1} |
+| Num root                    |       Continuous       |                                                 [0, 2] |
+| Num file creations          |       Continuous       |                                                [0, 40] |
+| Num shells                  |       Continuous       |                                                 [0, 2] |
+| Num access files            |       Continuous       |                                                 [0, 9] |
+| Num outbound cmds           |       Continuous       |                                                  { 0 } |
+| Is host login               |        Discrete        |                                                 {0, 1} |
+| Is guest login              |        Discrete        |                                                 {0, 1} |
+| Count                       |      Countinuous      |                                               [0, 511] |
+| Srv count                   |      Countinuous      |                                               [0, 511] |
+| Serror rate                 |      Countinuous      |                                                 [0, 1] |
+| Srv serror rate             |      Countinuous      |                                                 [0, 1] |
+| Rerror rate                 |      Countinuous      |                                                 [0, 1] |
+| Srv rerror rate             |      Countinuous      |                                                 [0, 1] |
+| Same srv rate               |      Countinuous      |                                                 [0, 1] |
+| Diff srv rate               |      Countinuous      |                                                 [0, 1] |
+| Srv diff host rate          |      Countinuous      |                                                 [0, 1] |
+| Dst host count              |      Countinuous      |                                               [0, 255] |
+| Dst host srv count          |      Countinuous      |                                               [0, 255] |
+| Dst host same srv rate      |      Countinuous      |                                                 [0, 1] |
+| Dst host diff srv rate      |      Countinuous      |                                                 [0, 1] |
+| Dst host same src port rate |      Countinuous      |                                                 [0, 1] |
+| Dst host serror rate        |      Countinuous      |                                                 [0, 1] |
+| Dst host srv serror rate    |      Countinuous      |                                                 [0, 1] |
+| Dst host rerror rate        |      Countinuous      |                                                 [0, 1] |
+| Dst host srv rerror rate    |      Countinuous      |                                                 [0, 1] |
 
 ### Outputs
 
 There are multiple possible outputs that can be grouped in
 
-| Label       | Description                         | Sub-labels |
-| ----------- |:-----------------------------------:| ---------- |
-| normal      | Normal                              | { normal } |
-| dos         | Denial of Service Attack            | { back, land, neptune, pod, smurf, teardrop } |
-| probe       | Probe                               | { ipsweep, nmap, postsweep, satan } |
-| u2r         | User to root (Privilege escalation) | { buffer_overflow, loadmodule, perl, rootkit } |
-| r2l         | Remote to user                      | { ftp_write, guess_passwd, imap, multihop, phf, spy, warezclient, warezmaster } |
+| Label  |             Description             | Sub-labels                                                                      |
+| ------ | :---------------------------------: | ------------------------------------------------------------------------------- |
+| normal |               Normal               | { normal }                                                                      |
+| dos    |      Denial of Service Attack      | { back, land, neptune, pod, smurf, teardrop }                                   |
+| probe  |                Probe                | { ipsweep, nmap, postsweep, satan }                                             |
+| u2r    | User to root (Privilege escalation) | { buffer_overflow, loadmodule, perl, rootkit }                                  |
+| r2l    |           Remote to user           | { ftp_write, guess_passwd, imap, multihop, phf, spy, warezclient, warezmaster } |
 
 ### Considerations over the KDD Cup 99 dataset
 
@@ -116,24 +119,43 @@ To avoid reinventing the basics, I will use the TensorFlow framework that suppor
 ### Logistic regression
 
 - Pros
-    - Fast inference
-    - Simple to understand because it is not a blackbox
+  - Fast inference
+  - Simple to understand because it is not a blackbox
 - Cons
-    - Probably too simple to correctly fit the problem
-    - No conception of time
+  - Probably too simple to correctly fit the problem
+  - No conception of time
 
 ### Standard FeedForward Neural Network
+
 - Pros
-    - Complex enough to fit most problem
+  - Complex enough to fit most problem
 - Cons
-    - No conception of time
+  - No conception of time
 
 ### LSTM Recurrent Neural Network
+
 - Pros
-    - Works with sequence, in our case, the packet that came before could be related to the next one. Such relation wouldn't be handled by the above models.
-    - Documented use in IDS
+  - Works with sequence, in our case, the packet that came before could be related to the next one. Such relation wouldn't be handled by the above models.
+  - Documented use in IDS
 - Cons
-    - More complex than all three of the above.
+  - More complex than all three of the above.
+
+
+## Advesarial Machine Learning Implementation
+
+* Advesarial machine learning is where you take the input data and slightly tweak it to test the robustness of the model
+* Impleneted by adjusting all the attack data
+* Dataset Adjustments
+  * Pulled out all attack data
+  * Determined that only 11 of the 31 features could be changed
+  * Randomly adjusted 3 of the 11 features on each row
+  * Each feature was adjusted by a random percent between 1 and 5 (inclusive)
+  * Repeated the last two steps five times for each row
+  * Turned 2.7 million attack rows into 13.75 million augemented attack rows
+* Results
+  * RF Model predicted ~92.48% with all of original test data
+  * RF Model predicted ~52.58% with 2% of augmented attack data
+  * More results to come for newer models
 
 ## Hardware implementation
 
@@ -150,25 +172,25 @@ These are merely supposition on what minimal hardware would be required based on
 
 - x86-64
 
-    [PCPartPicker part list](https://pcpartpicker.com/list/mQL6tJ) / [Price breakdown by merchant](https://pcpartpicker.com/list/mQL6tJ/by_merchant/)
+  [PCPartPicker part list](https://pcpartpicker.com/list/mQL6tJ) / [Price breakdown by merchant](https://pcpartpicker.com/list/mQL6tJ/by_merchant/)
 
-    Type|Item|Price
-    :----|:----|:----
-    **CPU** | [Intel - Celeron G3930 2.9GHz Dual-Core Processor](https://pcpartpicker.com/product/WqVBD3/intel-celeron-g3930-29ghz-dual-core-processor-bx80677g3930) | $38.69 @ OutletPC
-    **Motherboard** | [Gigabyte - GA-H110M-A Micro ATX LGA1151 Motherboard](https://pcpartpicker.com/product/hMvZxr/gigabyte-motherboard-gah110ma) | $51.49 @ SuperBiiz
-    **Memory** | [Patriot - Signature Line 4GB (1 x 4GB) DDR4-2400 Memory](https://pcpartpicker.com/product/GXbkcf/patriot-memory-psd44g240081) | $32.99 @ Amazon
-    **Storage** | [Seagate - Barracuda 250GB 3.5" 7200RPM Internal Hard Drive](https://pcpartpicker.com/product/vKtCmG/seagate-internal-hard-drive-st3250312as) | $16.34 @ Other World Computing
-    **Case** | [Rosewill - SRM-01 MicroATX Mini Tower Case](https://pcpartpicker.com/product/wMZ2FT/rosewill-case-srm01) | $29.99 @ Amazon
-    **Power Supply** | [EVGA - 400W ATX Power Supply](https://pcpartpicker.com/product/86M323/evga-power-supply-100n10400l1) | $29.99 @ Amazon
-    **Wired Network Adapter** | [TP-Link - TG-3468 PCI-Express x1 10/100/1000 Mbps Network Adapter](https://pcpartpicker.com/product/dQmLrH/tp-link-wired-network-card-tg3468) | $12.14 @ OutletPC
-    | *Prices include shipping, taxes, rebates, and discounts* |
-    | **Total** | **$211.63**
+  | Type                                                       | Item                                                                                                                                                | Price                          |
+  | :--------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------- |
+  | **CPU**                                              | [Intel - Celeron G3930 2.9GHz Dual-Core Processor](https://pcpartpicker.com/product/WqVBD3/intel-celeron-g3930-29ghz-dual-core-processor-bx80677g3930) | $38.69 @ OutletPC              |
+  | **Motherboard**                                      | [Gigabyte - GA-H110M-A Micro ATX LGA1151 Motherboard](https://pcpartpicker.com/product/hMvZxr/gigabyte-motherboard-gah110ma)                           | $51.49 @ SuperBiiz             |
+  | **Memory**                                           | [Patriot - Signature Line 4GB (1 x 4GB) DDR4-2400 Memory](https://pcpartpicker.com/product/GXbkcf/patriot-memory-psd44g240081)                         | $32.99 @ Amazon                |
+  | **Storage**                                          | [Seagate - Barracuda 250GB 3.5&#34; 7200RPM Internal Hard Drive](https://pcpartpicker.com/product/vKtCmG/seagate-internal-hard-drive-st3250312as)      | $16.34 @ Other World Computing |
+  | **Case**                                             | [Rosewill - SRM-01 MicroATX Mini Tower Case](https://pcpartpicker.com/product/wMZ2FT/rosewill-case-srm01)                                              | $29.99 @ Amazon                |
+  | **Power Supply**                                     | [EVGA - 400W ATX Power Supply](https://pcpartpicker.com/product/86M323/evga-power-supply-100n10400l1)                                                  | $29.99 @ Amazon                |
+  | **Wired Network Adapter**                            | [TP-Link - TG-3468 PCI-Express x1 10/100/1000 Mbps Network Adapter](https://pcpartpicker.com/product/dQmLrH/tp-link-wired-network-card-tg3468)         | $12.14 @ OutletPC              |
+  | *Prices include shipping, taxes, rebates, and discounts* |                                                                                                                                                     |                                |
+  | **Total**                                            | **$211.63**                                                                                                                                   |                                |
 
-    **It is worth noting that a used server can probably do the job and cost less. Also I'd like to point out that this is a dirty cheap version, the parts can easily be changed to get a stronger machine, Celeron -> i3 or HDD -> SDD**
-
+  **It is worth noting that a used server can probably do the job and cost less. Also I'd like to point out that this is a dirty cheap version, the parts can easily be changed to get a stronger machine, Celeron -> i3 or HDD -> SDD**
 - ARM
-    - 4 cores ARMv8 or more recent
-    - Something like a [Banana Pi R2](http://www.banana-pi.org/r2.html) hardware wise.
+
+  - 4 cores ARMv8 or more recent
+  - Something like a [Banana Pi R2](http://www.banana-pi.org/r2.html) hardware wise.
 
 For portability and performance, the inference will be done in C++.
 
